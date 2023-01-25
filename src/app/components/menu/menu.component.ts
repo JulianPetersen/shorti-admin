@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+
+  @Output () mostrarLigaPantalla = new EventEmitter<boolean>();
+
+  mostrarPantallaLiga:boolean = true
+
+
+  constructor(){
+    
+  }
+
+  mostrarLiga(){
+    this.mostrarLigaPantalla.emit(this.mostrarPantallaLiga)
+  }
 }
