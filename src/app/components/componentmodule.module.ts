@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { AdminLigaComponent } from './admin-liga/admin-liga.component';
+import { LoginComponent } from '../pages/login/login.component';
 
 
 
 @NgModule({
   declarations: [
     MenuComponent,
-    AdminLigaComponent
+    AdminLigaComponent,
+    LoginComponent
+
   ],
   imports: [
     CommonModule,
@@ -17,7 +20,9 @@ import { AdminLigaComponent } from './admin-liga/admin-liga.component';
   ],
   exports:[
     MenuComponent,
-    AdminLigaComponent
+    AdminLigaComponent,
+    LoginComponent
+
   ]
 })
 export class ComponentmoduleModule { }

@@ -40,6 +40,11 @@
                 margin: 10px;
                 border-style: none;
                 background-color: #34475f;
+                color: white;
+                
+            }
+            input::placeholder{
+                color:white;
             }
             button{
                 height: 40px;
@@ -48,6 +53,10 @@
                 background-color: #1d2c3f;
                 border-color: #34475f;
                 color: white;
+            }
+            .mensajeError{
+                color: red;
+                font-weight: bold;
             }
         }
     }
