@@ -33,6 +33,7 @@ export class LoginComponent {
       .subscribe({
         next: (res:any) => {
           localStorage.setItem('token',res.token)
+          localStorage.setItem('userId', res.userId)
           this.router.navigate(['/home'])
         },
         error: (e) =>{

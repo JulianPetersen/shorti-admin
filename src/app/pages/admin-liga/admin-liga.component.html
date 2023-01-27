@@ -15,4 +15,20 @@
                         </div>
                 </div>
         </div>
+        <div class="agregarLiga">
+                <div class="barra">
+                        <p>Ligas Agregadas</p>
+                </div>
+               <div class="contenedorLigas">
+                <div class="card" *ngFor="let liga of todasLasLigas">
+                        <div class="logoLiga">
+                                <img [src]="liga.imgUrl" alt="">
+                        </div>
+                        <div class="nombreLiga">
+
+                                <p>{{liga.name}}</p>
+                        </div>
+                </div>
+               </div> 
+        </div>
 </div>

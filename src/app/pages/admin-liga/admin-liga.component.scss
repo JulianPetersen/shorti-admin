@@ -1,5 +1,6 @@
 .contenedor{
     display: flex;
+    flex-wrap: wrap;
    .agregarLiga{
     width: 400px;
 
@@ -17,6 +18,33 @@
             
         }
        }
+       .contenedorLigas{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .card{
+            width: 80%;
+            height: 50px;
+            margin-top: 15px;
+            box-shadow: 5px 3px 10px -2px rgba(0,0,0,0.75);
+            display: flex;
+            .logoLiga{
+                width: 30%;
+                img{
+                    height: 50px;
+                    margin-left: 15px;
+                }
+            }
+            .nombreLiga{
+                width: 70%;
+                display: flex;
+                align-items: center;
+            }
+        }
+       }
+    
    }
 
    .formulario{

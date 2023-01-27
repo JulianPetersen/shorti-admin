@@ -1,0 +1,21 @@
+
+<div class="contenedor">
+    <div class="formulario">
+        <div class="titulo">
+            <img src="assets/shorti-logo.png" alt="">
+            <h1>Shorti</h1>
+        </div>
+        <div class="inputs">
+            <input type="text" [(ngModel)]="usuario.email" placeholder="  Email">
+            <input type="password" [(ngModel)]="usuario.password" placeholder="  Contraseña">
+            <select [(ngModel)]="usuario.roles" value="Selecciona un rol">
+                <option>user</option>
+                <option>moderator</option>
+                <option>admin</option>
+            </select>
+            
+            <button (click)="register()" >Iniciar Sesion</button>
+        </div>
+        
+    </div>
+</div>
