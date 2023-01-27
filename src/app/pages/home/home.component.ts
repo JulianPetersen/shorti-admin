@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  pantallaPrincipal:boolean = false;
-  adminLigaPantalla:boolean = true
+  pantallaPrincipal:boolean = true;
+  adminLigaPantalla:boolean = false
+  adminEquipoPantalla:boolean = false;
 
   message:string = '';
 
@@ -21,6 +22,7 @@ export class HomeComponent {
 
   mostrarPantallaLiga(event:boolean){
     this.pantallaPrincipal = false;
-    this.adminLigaPantalla =event
+    this.adminEquipoPantalla = false;
+    this.adminLigaPantalla = event
   }
 }

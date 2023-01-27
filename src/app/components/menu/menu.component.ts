@@ -21,4 +21,5 @@ export class MenuComponent {
   mostrarLiga(){
     this.mostrarLigaPantalla.emit(this.mostrarPantallaLiga)
   }
+
 }

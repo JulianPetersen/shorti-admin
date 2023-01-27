@@ -1,18 +1,16 @@
 <div class="contenedor">
-        <div class="agregarLiga">
+        <div class="formagregarLiga">
                 <div class="barra">
                         <p>Agregar una nueva Liga</p>
                 </div>
                 <div class="formulario">
                         <div class="input">
-                                <input type="text" placeholder="Nombre de la Liga">
+                                <input type="text" placeholder="Nombre de la Liga" [(ngModel)]="nameLiga" >
                         </div>
                         <div class="input">
-                                <input type="file" placeholder="Logo de la Liga">
+                                <input type="file" (change)="uploadFile($event)" placeholder="Logo de la Liga">
                         </div>
-                        <div class="input">
-                                <button>Agregar Liga</button>
-                        </div>
+                        <app-shorti-button (click)="createLiga()"></app-shorti-button>
                 </div>
         </div>
         <div class="agregarLiga">

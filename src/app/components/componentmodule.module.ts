@@ -4,6 +4,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { AdminLigaComponent } from '../pages/admin-liga/admin-liga.component';
 import { LoginComponent } from '../pages/login/login.component';
+import { ShortiButtonComponent } from './shorti-button/shorti-button.component';
+import { AdminEquipoComponent } from '../pages/admin-equipo/admin-equipo.component';
 
 
 
@@ -11,7 +13,9 @@ import { LoginComponent } from '../pages/login/login.component';
   declarations: [
     MenuComponent,
     AdminLigaComponent,
-    LoginComponent
+    LoginComponent,
+    ShortiButtonComponent,
+    AdminEquipoComponent
 
   ],
   imports: [
@@ -21,8 +25,9 @@ import { LoginComponent } from '../pages/login/login.component';
   exports:[
     MenuComponent,
     AdminLigaComponent,
-    LoginComponent
-
+    LoginComponent,
+    ShortiButtonComponent,
+    AdminEquipoComponent
   ]
 })
 export class ComponentmoduleModule { }

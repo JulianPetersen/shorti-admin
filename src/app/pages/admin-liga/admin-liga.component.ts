@@ -14,6 +14,9 @@ export class AdminLigaComponent {
 
   }
 
+  fileSelected:any
+  nameLiga:string = "";
+ 
   todasLasLigas:Ligas[] = [];
 
   ngOnInit(){
@@ -29,5 +32,32 @@ export class AdminLigaComponent {
            console.log(res);
         })
       })
+  }
+
+  createLiga(){
+    let newLiga:Ligas = {
+      name:this.nameLiga,
+      imgUrl:this.fileSelected.fileRaw,
+    }
+    console.log(newLiga)
+    
+    this.ligas.createLiga(newLiga)
+      .subscribe({
+        next: ((res:Ligas)=> {
+          console.log(res)
+          this.getLigas()
+        }),
+        error: ( err => {
+          console.log(err.error.message);
+        })
+      })
+  }
+
+  uploadFile(event:any){
+    const [file] = event.target.files;
+    this.fileSelected = {
+      fileRaw :file,
+      fileName: file.name
+    }
   }
 }

@@ -19,4 +19,14 @@ export class LigasService {
     })
     return this.http.get<Ligas[]>(`${this.global.URL}/ligas`,{headers:headers})
   }
+
+  createLiga(liga:Ligas){
+    let headers = new HttpHeaders({
+      'x-access-token': this.token
+    })
+    const fd = new FormData();
+    fd.append('name', liga.name)
+    fd.append('imgUrl', liga.imgUrl)
+    return this.http.post<Ligas>(`${this.global.URL}/ligas`,fd,{headers:headers})
+  }
 }
