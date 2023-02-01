@@ -4,17 +4,25 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentmoduleModule } from './components/componentmodule.module';
-import { MenuComponent } from './components/menu/menu.component';
-import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
+import { AdminPartidosComponent } from './pages/admin-partidos/admin-partidos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+//material
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
+    AdminPartidosComponent,
+
+
     
   ],
   imports: [
@@ -22,7 +30,10 @@ import { RegisterComponent } from './pages/register/register.component';
     AppRoutingModule,
     ComponentmoduleModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

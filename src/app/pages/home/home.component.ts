@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  pantallaPrincipal:boolean = true;
+  pantallaPrincipal:boolean = false;
   adminLigaPantalla:boolean = false
   adminEquipoPantalla:boolean = false;
+  adminPartidoPantalla:boolean = true
 
   message:string = '';
 
@@ -23,6 +24,26 @@ export class HomeComponent {
   mostrarPantallaLiga(event:boolean){
     this.pantallaPrincipal = false;
     this.adminEquipoPantalla = false;
+    this.adminPartidoPantalla = false
     this.adminLigaPantalla = event
   }
+
+
+  mostrarPantallaEquipo(event:boolean){
+    console.log(event)
+    this.pantallaPrincipal = false;
+    this.adminLigaPantalla = false;
+    this.adminPartidoPantalla = false
+    this.adminEquipoPantalla = event;
+  }
+
+  mostrarPantallaPartidos(event:boolean){
+    console.log(event)
+    this.pantallaPrincipal = false;
+    this.adminLigaPantalla = false;
+    this.adminEquipoPantalla = false;
+    this.adminPartidoPantalla = event
+
+  }
+  
 }

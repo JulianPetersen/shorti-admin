@@ -1,0 +1,150 @@
+<div class="contenedor" >
+    <div class="formagregarLiga"  >
+            <div class="barra">
+                    <p>Agregar un Nuevo Equipo</p>
+            </div>
+            <div class="formulario">
+                    <div class="input">
+                            <input type="date" placeholder="Fecha" [(ngModel)]="date">
+                    </div>
+                    <div class="input">
+                        <input type="time" placeholder="Fecha" [(ngModel)]="hora">
+                    </div>
+                    <div class="input">
+                        <label for="">Liga</label>
+                        <select name="" id="" [(ngModel)]="selectedLiga" (change)="getLiga()">
+                            <option value="">Elija Liga</option>
+                            <option *ngFor="let liga of listLigas"  [value]="liga._id">{{liga.name}}</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <label for="">Equipo 1</label>
+                        <select name="" id="" [(ngModel)]="selectedEquipo1">
+                            <option *ngFor="let equipo of listEquipos" [value]="equipo._id">{{equipo.name}}</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <label for="">Equipo 2</label>
+                        <select name="" id="" [(ngModel)]="selectedEquipo2">
+                            <option *ngFor="let equipo of listEquipos" [value]="equipo._id">{{equipo.name}}</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <label for="">Estado</label>
+                        <select name="" id="" [(ngModel)]="estado">
+                            <option value="Habilitado">Habilitado</option>
+                            <option value="En curso">En Curso</option>
+                            <option value="Finalizado">Finalizado</option>
+                        </select>
+                    </div>
+                   <app-shorti-button (click)="createPartido()"></app-shorti-button>
+            </div>
+    </div>
+
+
+    <div class="partidosActivos"  >
+        <div class="barra">
+                <p>Partidos Activos</p>
+        </div>
+        
+        <div class="card" *ngFor="let partidos of listPartidosHabilitados">
+            <div class="fechaPartido">
+                <p>Fecha: {{this.partidos.fecha}} Horario {{this.partidos.horario}}</p>
+            </div>
+           <div class="infoPartido">
+                <div class="logoEquipo">
+                    <img [src]="partidos.equipo1.imgUrl" alt="">
+                </div>
+                <div class="nombreEqipo">
+                    <p>{{partidos.equipo1.name}}</p>
+                    
+                </div>
+                
+                <div >
+                    <p>Vs</p>
+
+                </div>
+                <div class="nombreEqipo">
+                    <p>{{partidos.equipo2.name}}</p>
+                    
+                </div>
+
+                <div class="logoEquipo">
+                    <img [src]="partidos.equipo2.imgUrl" alt="">
+                </div>
+           </div>
+           <div class="buttons">
+                <button (click)="eliminarPartido(partidos._id)">Eliminar</button>
+                <button (click)="Actualizar(partidos._id)" >Actualizar</button>
+           </div>
+            
+        </div>
+    </div>
+
+    <div class="partidosActivos"  >
+        <div class="barra"> 
+                <p>Partidos En curso</p>
+        </div>
+        
+        <div class="card" *ngFor="let partidos of listPartidosEnCurso">
+            <div class="fechaPartido">
+                <p>Fecha: {{this.partidos.fecha}} Horario {{this.partidos.horario}}</p>
+            </div>
+           <div class="infoPartido">
+                <div class="logoEquipo">
+                    <img [src]="partidos.equipo1.imgUrl" alt="">
+                </div>
+                <div class="nombreEqipo">
+                    <p>{{partidos.equipo1.name}}</p>
+                </div>
+                <p>{{partidos.resultado.equipo1}}</p>
+                <div >
+                    <p>Vs</p>
+                </div>
+                <p>{{partidos.resultado.equipo2}}</p>
+                <div class="nombreEqipo">
+                    <p>{{partidos.equipo2.name}}</p>
+                </div>
+                <div class="logoEquipo">
+                    <img [src]="partidos.equipo2.imgUrl" alt="">
+                </div>
+           </div>
+           <div class="buttons">
+                <button (click)="finalizarPartido(partidos._id)">Finalizar</button>
+                <button (click)="actualizarResultado(partidos._id)" >Actualizar</button>
+           </div>
+            
+        </div>
+    </div>
+
+    <div class="partidosActivos"  >
+        <div class="barra"> 
+                <p>Partidos Finalizados</p>
+        </div>
+        
+        <div class="card" *ngFor="let partidos of listPartidosFinalizados">
+            <div class="fechaPartido">
+                <p>Fecha: {{this.partidos.fecha}} Horario {{this.partidos.horario}}</p>
+            </div>
+           <div class="infoPartido">
+                <div class="logoEquipo">
+                    <img [src]="partidos.equipo1.imgUrl" alt="">
+                </div>
+                <div class="nombreEqipo">
+                    <p>{{partidos.equipo1.name}}</p>
+                </div>
+                <p>{{partidos.resultado.equipo1}}</p>
+                <div >
+                    <p>Vs</p>
+                </div>
+                <p>{{partidos.resultado.equipo2}}</p>
+                <div class="nombreEqipo">
+                    <p>{{partidos.equipo2.name}}</p>
+                </div>
+                <div class="logoEquipo">
+                    <img [src]="partidos.equipo2.imgUrl" alt="">
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

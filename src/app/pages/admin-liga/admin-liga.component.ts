@@ -60,4 +60,18 @@ export class AdminLigaComponent {
       fileName: file.name
     }
   }
+
+  eliminarLiga(id:any){
+    console.log(id)
+    this.ligas.deleteLiga(id)
+      .subscribe({
+        next: (res => {
+          console.log('equipo eliminaod')
+          this.getLigas();
+        }),
+        error: (err => {
+          console.log(err);
+        })
+      })
+  }
 }

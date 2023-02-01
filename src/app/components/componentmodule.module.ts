@@ -6,6 +6,10 @@ import { AdminLigaComponent } from '../pages/admin-liga/admin-liga.component';
 import { LoginComponent } from '../pages/login/login.component';
 import { ShortiButtonComponent } from './shorti-button/shorti-button.component';
 import { AdminEquipoComponent } from '../pages/admin-equipo/admin-equipo.component';
+import { ModalEditarequipoComponent } from './modal-editarequipo/modal-editarequipo.component';
+import { ActualizarResultadoComponent } from './actualizar-resultado/actualizar-resultado.component';
+
+
 
 
 
@@ -15,19 +19,24 @@ import { AdminEquipoComponent } from '../pages/admin-equipo/admin-equipo.compone
     AdminLigaComponent,
     LoginComponent,
     ShortiButtonComponent,
-    AdminEquipoComponent
+    AdminEquipoComponent,
+    ModalEditarequipoComponent,
+    ActualizarResultadoComponent
 
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+
   ],
   exports:[
     MenuComponent,
     AdminLigaComponent,
     LoginComponent,
     ShortiButtonComponent,
-    AdminEquipoComponent
+    AdminEquipoComponent,
+    ModalEditarequipoComponent,
+    ActualizarResultadoComponent
   ]
 })
 export class ComponentmoduleModule { }

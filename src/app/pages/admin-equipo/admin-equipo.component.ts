@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Equipos } from 'src/app/models/equipos';
+import { Ligas } from 'src/app/models/ligas';
+import { EquiposService } from 'src/app/services/equipos.service';
+import { LigasService } from 'src/app/services/ligas.service';
 
 @Component({
   selector: 'app-admin-equipo',
@@ -7,4 +11,77 @@ import { Component } from '@angular/core';
 })
 export class AdminEquipoComponent {
 
+  listLigas:any[] = []
+  listEquipos:any[] = []
+  fileSelected:any
+
+  nameEquipo:string="";
+  liga:string="";
+
+
+  constructor(private ligas:LigasService, private equipo:EquiposService){
+
+  }
+
+
+  ngOnInit(){
+    this.getLigas()
+  }
+
+  getLigas(){
+    this.ligas.getLigas()
+      .subscribe({
+        next: ((res)=> {
+          this.listLigas = res;
+          console.log(res)
+        })
+      })
+  }
+
+  selectedLiga(id:any){
+    this.liga = id
+    console.log(this.liga)
+  }
+
+  createEquipo(){
+    let newEquipo:Equipos = {
+      name:this.nameEquipo,
+      liga:this.liga,
+      imgUrl:this.fileSelected.fileRaw,
+    }
+    console.log(newEquipo)
+    
+    this.equipo.createEquipo(newEquipo)
+      .subscribe({
+        next: ((res:Equipos)=> {
+          console.log(res)
+          this.getLigas()
+        }),
+        error: ( err => {
+          console.log(err.error.message);
+        })
+      })
+  }
+
+  uploadFile(event:any){
+    const [file] = event.target.files;
+    this.fileSelected = {
+      fileRaw :file,
+      fileName: file.name
+    }
+  }
+
+  eliminarEquipo(id:string){
+    console.log(id)
+    this.equipo.deleteEquipo(id)
+      .subscribe({
+        next: ((res)=> {
+          this.getLigas()
+          console.log('eliminado con exito')
+        }),
+        error: (err => {
+          console.log(err)
+        })
+      })
+  }
 }

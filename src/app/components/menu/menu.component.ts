@@ -10,10 +10,12 @@ export class MenuComponent {
 
 
   @Output () mostrarLigaPantalla = new EventEmitter<boolean>();
+  @Output () mostrarEquipoPantalla = new EventEmitter<boolean>();
+  @Output () mostrarPartidoPantalla = new EventEmitter<boolean>()
 
   mostrarPantallaLiga:boolean = true
-
-
+  mostrarPantallaEquipo:boolean = true
+  mostrarPantallaPartidos:boolean = true
   constructor(){
     
   }
@@ -22,4 +24,11 @@ export class MenuComponent {
     this.mostrarLigaPantalla.emit(this.mostrarPantallaLiga)
   }
 
+  mostrarEquipo(){
+    this.mostrarEquipoPantalla.emit(this.mostrarPantallaEquipo)
+  }
+
+  mostrarPartidos(){
+    this.mostrarPartidoPantalla.emit(this.mostrarPantallaPartidos)
+  }
 }

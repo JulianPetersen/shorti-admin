@@ -1,0 +1,25 @@
+<div class="contenedor">
+    <div class="barra">
+        <h4>Editar Equipo</h4>
+    </div>
+    <div class="formulario">
+        <div class="input">
+                <input type="date" placeholder="Fecha" [(ngModel)]="date">
+        </div>
+        <div class="input">
+            <input type="time" placeholder="Fecha" [(ngModel)]="hora">
+        </div>
+        <div class="input">
+            <label for="">Estado</label>
+            <select name="" id="" [(ngModel)]="estado">
+                <option value="Habilitado">Habilitado</option>
+                <option value="En curso">En Curso</option>
+                <option value="Finalizado">Finalizado</option>
+            </select>
+        </div>
+        <div class="input">
+
+            <button (click)="editarPartido()"> Editar Equipo</button>
+        </div>
+</div>
+</div>

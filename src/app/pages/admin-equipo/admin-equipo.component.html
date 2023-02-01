@@ -1,1 +1,43 @@
-<p>admin-equipo works!</p>
+<div class="contenedor" >
+    <div class="formagregarLiga"  >
+            <div class="barra">
+                    <p>Agregar un Nuevo Equipo</p>
+            </div>
+            <div class="formulario">
+                    <div class="input">
+                            <input type="text" placeholder="Nombre de Equipo" [(ngModel)]="nameEquipo">
+                    </div>
+                    <div class="input">
+                        <select name="Liga" id=""  [(ngModel)]="liga" >
+                            <option value="">Seleccione una Liga </option>
+                            <option *ngFor="let ligas of listLigas" [value]="ligas._id">{{ligas.name}}</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <input type="file" name="Agregar Foto " (change)="uploadFile($event)">
+                    </div>
+                    <div class="input">
+                        <button (click)="createEquipo()">Agregar Equipo</button>
+                    </div>
+            </div>
+    </div>
+    <div class="agregarLiga"  *ngFor="let liga of listLigas">
+            <div class="barra">
+                    <p>{{liga.name}}</p>
+            </div>
+           <div class="contenedorLigas" #customLoadingTemplate>
+            <div class="card" *ngFor="let eq of liga.equipos">
+                    <div class="logoLiga">
+                            <img  alt="" [src]="eq.imgUrl">
+                    </div>
+                    <div class="nombreLiga">
+                            <p>{{eq.name}}</p>
+                    </div>
+                    <button (click)="eliminarEquipo(eq._id)">Eliminar</button>
+            </div>
+        </div> 
+
+        </div>
+
+   
+</div>

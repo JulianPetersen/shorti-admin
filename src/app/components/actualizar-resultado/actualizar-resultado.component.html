@@ -1,0 +1,26 @@
+<div class="contenedor">
+    <div class="barra">
+        <h4>Editar Resultado</h4>
+    </div>
+    <div class="formulario">
+        <div class="input">
+            <label for="">Equipo1</label>
+            <input [(ngModel)]="resultEquipo1" type="number" name="" id="">
+        </div>
+        <div class="input">
+            <label for="">Equipo2</label>
+            <input [(ngModel)]="resultEquipo2" type="number" name="" id="">
+        </div>
+        <div class="input">
+            <label for="">Estado</label>
+            <select name="" id="" [(ngModel)]="estado">
+                <option value="Habilitado">Habilitado</option>
+                <option value="En curso">En Curso</option>
+                <option value="Finalizado">Finalizado</option>
+            </select>
+        </div>
+        <div class="input">
+            <button (click)="actualizarResultado()">Actualizar</button>
+        </div>
+    </div>
+</div>
