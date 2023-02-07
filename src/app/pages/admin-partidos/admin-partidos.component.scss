@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     align-items: flex-start;
     margin-left: 200px;
-
     .formagregarLiga {
         width: 350px;
         margin: 15px;
@@ -48,15 +47,11 @@
         }
         .card{
             width: 90%;
-            
             margin-top: 5px;
             margin-bottom: 15px;
             box-shadow: 5px 3px 10px -2px rgba(0,0,0,0.75);
             display: flex;
             flex-direction: column;
-
-
-            
             .logoEquipo{
                 img{
                     height: 50px;
@@ -64,7 +59,6 @@
                     margin-right: 15px;
                 }
             }
-
             .infoPartido{
                 width: 100%;
                 display: flex;
@@ -108,23 +102,18 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-
         .input {
             width: 100%;
             display: flex;
             justify-content: space-around;
             margin-top: 14px;
             margin-bottom: 10px;
-
             select {
                 width: 100px;
             }
-
             input {
                 width: 300px;
-
             }
-
             button {
                 background-color: #1d2c3f;
                 color: white;

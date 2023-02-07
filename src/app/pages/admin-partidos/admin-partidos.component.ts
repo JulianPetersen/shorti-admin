@@ -68,7 +68,8 @@ export class AdminPartidosComponent {
       equipo1:this.selectedEquipo1,
       equipo2:this.selectedEquipo2,
       resultado:{
-        ganador: "equipo1"
+        equipo1: 0,
+        equipo2: 0
       },
       estado:this.estado
     }
