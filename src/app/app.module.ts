@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //material
 import {MatDialogModule} from '@angular/material/dialog';
+import { SorteoAdminComponent } from './pages/sorteo-admin/sorteo-admin.component';
+import { AdminRetirosComponent } from './pages/admin-retiros/admin-retiros.component';
 
 
 @NgModule({
@@ -21,9 +23,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomeComponent,
     RegisterComponent,
     AdminPartidosComponent,
-
-
-    
+    SorteoAdminComponent,
+    AdminRetirosComponent,
+    AdminRetirosComponent
   ],
   imports: [
     BrowserModule,

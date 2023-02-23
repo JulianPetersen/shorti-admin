@@ -2,6 +2,8 @@
     <app-menu (mostrarLigaPantalla)="mostrarPantallaLiga($event)"
               (mostrarEquipoPantalla)="mostrarPantallaEquipo($event)"
               (mostrarPartidoPantalla)="mostrarPantallaPartidos($event)"
+              (mostrarSorteoPantalla)="mostrarPantallaSorteo($event)"
+              (mostrarRetirosPantalla)="mostrarPantallaRetiros($event)"
     ></app-menu>
     <div class="conteiner" *ngIf="pantallaPrincipal">
         principal
@@ -9,4 +11,6 @@
     <app-admin-liga class="conteiner" *ngIf="adminLigaPantalla"></app-admin-liga>
     <app-admin-equipo class="conteiner" *ngIf="adminEquipoPantalla"></app-admin-equipo>
     <app-admin-partidos class="conteiner" *ngIf="adminPartidoPantalla"></app-admin-partidos>
+    <app-sorteo-admin class="conteiner" *ngIf="adminSorteoPantalla"></app-sorteo-admin>
+    <app-admin-retiros class="conteiner" *ngIf="adminRetirosPantalla"></app-admin-retiros>
 </div>

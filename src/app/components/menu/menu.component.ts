@@ -12,10 +12,16 @@ export class MenuComponent {
   @Output () mostrarLigaPantalla = new EventEmitter<boolean>();
   @Output () mostrarEquipoPantalla = new EventEmitter<boolean>();
   @Output () mostrarPartidoPantalla = new EventEmitter<boolean>()
+  @Output () mostrarSorteoPantalla = new EventEmitter<boolean>();
+  @Output () mostrarRetirosPantalla = new EventEmitter<boolean>();
+
 
   mostrarPantallaLiga:boolean = true
   mostrarPantallaEquipo:boolean = true
   mostrarPantallaPartidos:boolean = true
+  mostrarPantallaSorteo:boolean = true
+  mostrarPantallaRetiro:boolean = true
+  
   constructor(){
     
   }
@@ -30,5 +36,13 @@ export class MenuComponent {
 
   mostrarPartidos(){
     this.mostrarPartidoPantalla.emit(this.mostrarPantallaPartidos)
+  }
+
+  mostrarSorteos(){
+    this.mostrarSorteoPantalla.emit(this.mostrarPantallaSorteo)
+  }
+
+  mostrarRetiros(){
+    this.mostrarRetirosPantalla.emit(this.mostrarPantallaRetiro)
   }
 }

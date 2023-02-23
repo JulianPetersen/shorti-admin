@@ -101,7 +101,7 @@ export class AdminPartidosComponent {
               this.listPartidosFinalizados.push(partido)
             }
           }
-          console.log('PartidosHabilitados',this.listPartidosEnCurso)
+          console.log('PartidosHabilitados',this.listPartidosHabilitados)
         }),
         error:((error) => {console.log(error)})
       })

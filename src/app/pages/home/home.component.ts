@@ -9,8 +9,9 @@ export class HomeComponent {
   pantallaPrincipal:boolean = false;
   adminLigaPantalla:boolean = false
   adminEquipoPantalla:boolean = false;
-  adminPartidoPantalla:boolean = true
-
+  adminPartidoPantalla:boolean = false
+  adminSorteoPantalla: boolean = false
+  adminRetirosPantalla: boolean = true
   message:string = '';
 
   constructor(){
@@ -25,6 +26,8 @@ export class HomeComponent {
     this.pantallaPrincipal = false;
     this.adminEquipoPantalla = false;
     this.adminPartidoPantalla = false
+    this.adminSorteoPantalla= false
+    this.adminRetirosPantalla = false
     this.adminLigaPantalla = event
   }
 
@@ -34,6 +37,8 @@ export class HomeComponent {
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminPartidoPantalla = false
+    this.adminSorteoPantalla= false
+    this.adminRetirosPantalla = false
     this.adminEquipoPantalla = event;
   }
 
@@ -42,8 +47,28 @@ export class HomeComponent {
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminEquipoPantalla = false;
+    this.adminSorteoPantalla= false
+    this.adminRetirosPantalla = false
     this.adminPartidoPantalla = event
 
   }
   
+  mostrarPantallaSorteo(event:boolean){
+    this.pantallaPrincipal = false;
+    this.adminLigaPantalla = false;
+    this.adminEquipoPantalla = false;
+    this.adminPartidoPantalla = false
+    this.adminRetirosPantalla = false
+    this.adminSorteoPantalla= event
+
+  }
+
+  mostrarPantallaRetiros(event:boolean){
+    this.pantallaPrincipal = false;
+    this.adminLigaPantalla = false;
+    this.adminEquipoPantalla = false;
+    this.adminPartidoPantalla = false
+    this.adminSorteoPantalla= false
+    this.adminRetirosPantalla = event
+  }
 }

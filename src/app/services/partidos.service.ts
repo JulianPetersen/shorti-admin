@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalService } from './global.service';
 import { Partidos } from '../models/partidos';
+
+
 @Injectable({
   providedIn: 'root'
 })

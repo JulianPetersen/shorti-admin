@@ -1,0 +1,67 @@
+<div class="contenedor">
+
+    <div class="tabla">
+        <div class="barra">
+            <h3>Retiros solicitados</h3>
+        </div>
+        <div class="contenido">
+            <div class="card" *ngFor="let retiros of allRetiros">
+                <div class="items">
+                    <div class="item">
+                        <p>Usuario:</p>
+                        <p>{{retiros.usuario.username}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Nombre:</p>
+                        <p>{{retiros.nombre}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Apellido:</p>
+                        <p>{{retiros.apellido}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Mail:</p>
+                        <p>{{retiros.usuario.email}}</p>
+                    </div>
+                    <div class="item">
+                        <p>CBU:</p>
+                        <p>{{retiros.cbu}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Alias:</p>
+                        <p>{{retiros.alias}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Monto:</p>
+                        <p>${{retiros.monto}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Fecha:</p>
+                        <p>{{retiros.fecha}}</p>
+                    </div>
+                    <div class="item">
+                        <p>Estado</p>
+                        <p
+                        *ngIf="retiros.estado == 'Pendiente'" 
+                        [ngClass]="{'red':retiros.estado =='Pendiente'}"
+                        >{{retiros.estado}}</p>
+                        <p
+                        *ngIf="retiros.estado == 'Pagado'" 
+                        [ngClass]="{'green':retiros.estado =='Pagado'}"
+                        >{{retiros.estado}}</p>
+                        
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <button (click)="updateEstado(retiros._id)">Marcara como pagado</button>
+                    </div>
+                    <div class="item">
+                        <button (click)="updateEstadoPendiente(retiros._id)">Marcara como pendiente</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

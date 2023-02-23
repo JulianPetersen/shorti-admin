@@ -1,0 +1,48 @@
+<div class="contenedor" >
+     <div class="datosSorteo"  >
+          <div class="barra">
+                  <p>Agregar Un sorteo</p>
+          </div>
+          <div class="form">
+               <div class="item">
+                    <input type="Nuber" placeholder="Pesos $" [(ngModel)]="cantidadNuevoSorteo">
+               </div>
+               <div class="item">
+                    <input type="date" placeholder="Pesos $" [(ngModel)]="fechaNuevoSorteo">
+               </div>
+               <div class="buttons">
+                    <button (click)="crearSorteo()">Crear Sorteo</button>
+               </div>
+          </div>
+
+         
+  </div>
+    <div class="datosSorteo"  >
+            <div class="barra">
+                    <p>Sorteo Vigente</p>
+            </div>
+
+           <div class="infoSorteo">
+                <p>El Sorteo Activo es de $: {{cantidadSorteo}}</p>
+                <p>Cantidad de Participaciones: {{cantParticipaciones}}</p>
+                <p>Sortea El dia: {{fechaSorteo}}</p>
+           </div>
+           <div class="buttons">
+                <button (click)="updateGanador()">Realizar Sorteo</button>
+           </div>
+    </div>
+
+    <div class="datosSorteo"  >
+     <div class="barra">
+             <p>Ultimo Sorteo</p>
+     </div>
+
+    <div class="infoSorteo">
+         <p>El sorteo fue de $: {{cantidadSorteoRealizado}}</p>
+         <p>Cantidad de Participaciones: {{cantParticipacionesRealizado}}</p>
+         <p>Se realizo el dia: {{fechaSorteoRealizado}}</p>
+         <p>El ganador Fue: {{ganadorSorteoRealizado}}</p>
+    </div>
+</div>
+
+</div>
