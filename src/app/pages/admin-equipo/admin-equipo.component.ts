@@ -3,6 +3,7 @@ import { Equipos } from 'src/app/models/equipos';
 import { Ligas } from 'src/app/models/ligas';
 import { EquiposService } from 'src/app/services/equipos.service';
 import { LigasService } from 'src/app/services/ligas.service';
+import {Storage, ref, uploadBytes, getDownloadURL} from '@angular/fire/storage'
 
 @Component({
   selector: 'app-admin-equipo',
@@ -17,9 +18,9 @@ export class AdminEquipoComponent {
 
   nameEquipo:string="";
   liga:string="";
+  imgUrl:string=""
 
-
-  constructor(private ligas:LigasService, private equipo:EquiposService){
+  constructor(private ligas:LigasService, private equipo:EquiposService,private storage:Storage){
 
   }
 
@@ -47,7 +48,7 @@ export class AdminEquipoComponent {
     let newEquipo:Equipos = {
       name:this.nameEquipo,
       liga:this.liga,
-      imgUrl:this.fileSelected.fileRaw,
+      imgUrl:this.imgUrl,
     }
     console.log(newEquipo)
     
@@ -62,6 +63,26 @@ export class AdminEquipoComponent {
         })
       })
   }
+
+
+  uploadImage(event:any){
+    const file = event.target.files[0];
+    console.log(file)
+
+    const imgRef = ref(this.storage, `images/${file.name}`)
+
+    uploadBytes(imgRef, file)
+      .then(response =>{
+        console.log(response)
+        let imgUrl = getDownloadURL(imgRef)
+          .then(res => {
+            this.imgUrl = res;
+          })
+        console.log(imgUrl)
+      } )
+      .catch(error => console.log(error))
+  }
+
 
   uploadFile(event:any){
     const [file] = event.target.files;

@@ -7,5 +7,9 @@ export class GlobalService {
 
   constructor() { }
 
-  URL:string = "http://localhost:4000/api"
+  // //dev
+  // URL:string = "http://localhost:4000/api"
+
+  //prod
+  URL:string = "https://shorti.store/api"
 }

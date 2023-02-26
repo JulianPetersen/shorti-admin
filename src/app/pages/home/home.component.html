@@ -4,6 +4,7 @@
               (mostrarPartidoPantalla)="mostrarPantallaPartidos($event)"
               (mostrarSorteoPantalla)="mostrarPantallaSorteo($event)"
               (mostrarRetirosPantalla)="mostrarPantallaRetiros($event)"
+              (mostrarUsuariosPantalla)="mostrarPantallaUsuarios($event)"
     ></app-menu>
     <div class="conteiner" *ngIf="pantallaPrincipal">
         principal
@@ -13,4 +14,5 @@
     <app-admin-partidos class="conteiner" *ngIf="adminPartidoPantalla"></app-admin-partidos>
     <app-sorteo-admin class="conteiner" *ngIf="adminSorteoPantalla"></app-sorteo-admin>
     <app-admin-retiros class="conteiner" *ngIf="adminRetirosPantalla"></app-admin-retiros>
+    <app-admin-users class="conteiner" *ngIf="adminUsuariosPantalla"></app-admin-users>
 </div>

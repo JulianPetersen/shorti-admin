@@ -34,7 +34,7 @@ export class LigasService {
     let headers = new HttpHeaders({
       "x-access-token":this.token
     })
-    return this.http.get(`${this.global.URL}/ligas/${id}`)
+    return this.http.get(`${this.global.URL}/ligas/${id}`,{headers:headers})
   }
   
   deleteLiga(id:string){

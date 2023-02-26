@@ -15,6 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SorteoAdminComponent } from './pages/sorteo-admin/sorteo-admin.component';
 import { AdminRetirosComponent } from './pages/admin-retiros/admin-retiros.component';
+import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -25,7 +29,8 @@ import { AdminRetirosComponent } from './pages/admin-retiros/admin-retiros.compo
     AdminPartidosComponent,
     SorteoAdminComponent,
     AdminRetirosComponent,
-    AdminRetirosComponent
+    AdminRetirosComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,9 @@ import { AdminRetirosComponent } from './pages/admin-retiros/admin-retiros.compo
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
 
   ],
   providers: [],
