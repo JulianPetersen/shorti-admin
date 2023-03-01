@@ -40,7 +40,7 @@ export class AdminLigaComponent {
   createLiga(){
     let newLiga:Ligas = {
       name:this.nameLiga,
-      imgUrl:this.imgUrl,
+      imgUrl:this.fileSelected.fileRaw,
     }
     console.log(newLiga)
     
@@ -56,31 +56,33 @@ export class AdminLigaComponent {
       })
   }
 
-  // uploadFile(event:any){
-  //   const [file] = event.target.files;
-  //   this.fileSelected = {
-  //     fileRaw :file,
-  //     fileName: file.name
-  //   }
-  // }
-
-  uploadImage(event:any){
-    const file = event.target.files[0];
-    console.log(file)
-
-    const imgRef = ref(this.storage, `images/${file.name}`)
-
-    uploadBytes(imgRef, file)
-      .then(response =>{
-        console.log(response)
-        let imgUrl = getDownloadURL(imgRef)
-          .then(res => {
-            this.imgUrl = res;
-          })
-        console.log(imgUrl)
-      } )
-      .catch(error => console.log(error))
+  uploadFile(event:any){
+    const [file] = event.target.files;
+    this.fileSelected = {
+      fileRaw :file,
+      fileName: file.name
+    }
+    console.log(this.fileSelected.fileRaw)
+    console.log(this.fileSelected.fileName)
   }
+
+  // uploadImage(event:any){
+  //   const file = event.target.files[0];
+  //   console.log(file)
+
+  //   const imgRef = ref(this.storage, `images/${file.name}`)
+
+  //   uploadBytes(imgRef, file)
+  //     .then(response =>{
+  //       console.log(response)
+  //       let imgUrl = getDownloadURL(imgRef)
+  //         .then(res => {
+  //           this.imgUrl = res;
+  //         })
+  //       console.log(imgUrl)
+  //     } )
+  //     .catch(error => console.log(error))
+  // }
 
   eliminarLiga(id:any){
     console.log(id)

@@ -48,7 +48,7 @@ export class AdminEquipoComponent {
     let newEquipo:Equipos = {
       name:this.nameEquipo,
       liga:this.liga,
-      imgUrl:this.imgUrl,
+      imgUrl:this.fileSelected.fileRaw,
     }
     console.log(newEquipo)
     
@@ -65,23 +65,23 @@ export class AdminEquipoComponent {
   }
 
 
-  uploadImage(event:any){
-    const file = event.target.files[0];
-    console.log(file)
+  // uploadImage(event:any){
+  //   const file = event.target.files[0];
+  //   console.log(file)
 
-    const imgRef = ref(this.storage, `images/${file.name}`)
+  //   const imgRef = ref(this.storage, `images/${file.name}`)
 
-    uploadBytes(imgRef, file)
-      .then(response =>{
-        console.log(response)
-        let imgUrl = getDownloadURL(imgRef)
-          .then(res => {
-            this.imgUrl = res;
-          })
-        console.log(imgUrl)
-      } )
-      .catch(error => console.log(error))
-  }
+  //   uploadBytes(imgRef, file)
+  //     .then(response =>{
+  //       console.log(response)
+  //       let imgUrl = getDownloadURL(imgRef)
+  //         .then(res => {
+  //           this.imgUrl = res;
+  //         })
+  //       console.log(imgUrl)
+  //     } )
+  //     .catch(error => console.log(error))
+  // }
 
 
   uploadFile(event:any){
