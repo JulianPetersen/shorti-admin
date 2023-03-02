@@ -19,7 +19,8 @@ import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-
+import { PoliticasComponent } from './pages/politicas/politicas.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     SorteoAdminComponent,
     AdminRetirosComponent,
     AdminRetirosComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    PoliticasComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatTableModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())
 

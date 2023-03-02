@@ -8,6 +8,7 @@ import { ShortiButtonComponent } from './shorti-button/shorti-button.component';
 import { AdminEquipoComponent } from '../pages/admin-equipo/admin-equipo.component';
 import { ModalEditarequipoComponent } from './modal-editarequipo/modal-editarequipo.component';
 import { ActualizarResultadoComponent } from './actualizar-resultado/actualizar-resultado.component';
+import { TerminoComponent } from '../pages/termino/termino.component';
 
 
 
@@ -21,7 +22,8 @@ import { ActualizarResultadoComponent } from './actualizar-resultado/actualizar-
     ShortiButtonComponent,
     AdminEquipoComponent,
     ModalEditarequipoComponent,
-    ActualizarResultadoComponent
+    ActualizarResultadoComponent,
+    TerminoComponent
 
   ],
   imports: [

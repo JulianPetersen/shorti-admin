@@ -11,8 +11,8 @@ export class HomeComponent {
   adminEquipoPantalla:boolean = false;
   adminPartidoPantalla:boolean = false
   adminSorteoPantalla: boolean = false
-  adminRetirosPantalla: boolean = true
-  adminUsuariosPantalla: boolean = false
+  adminRetirosPantalla: boolean = false
+  adminUsuariosPantalla: boolean = true
   message:string = '';
 
   constructor(){
