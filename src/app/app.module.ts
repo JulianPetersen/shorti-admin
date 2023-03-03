@@ -21,6 +21,9 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { PoliticasComponent } from './pages/politicas/politicas.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatDialogModule,
     MatTableModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())
 

@@ -5,14 +5,21 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
+
 export class HomeComponent {
-  pantallaPrincipal:boolean = false;
+
+
+  showFiller = false;
+
+
+  pantallaPrincipal:boolean = true;
   adminLigaPantalla:boolean = false
   adminEquipoPantalla:boolean = false;
   adminPartidoPantalla:boolean = false
   adminSorteoPantalla: boolean = false
   adminRetirosPantalla: boolean = false
-  adminUsuariosPantalla: boolean = true
+  adminUsuariosPantalla: boolean = false
   message:string = '';
 
   constructor(){
@@ -23,62 +30,62 @@ export class HomeComponent {
     
   }
 
-  mostrarPantallaLiga(event:boolean){
+  mostrarPantallaLiga(){
     this.pantallaPrincipal = false;
     this.adminEquipoPantalla = false;
     this.adminPartidoPantalla = false
     this.adminSorteoPantalla= false
     this.adminRetirosPantalla = false
     this.adminUsuariosPantalla = false
-    this.adminLigaPantalla = event
+    this.adminLigaPantalla = true
   }
 
 
-  mostrarPantallaEquipo(event:boolean){
-    console.log(event)
+  mostrarPantallaEquipo(){
+    
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminPartidoPantalla = false
     this.adminSorteoPantalla= false
     this.adminRetirosPantalla = false
     this.adminUsuariosPantalla = false
-    this.adminEquipoPantalla = event;
+    this.adminEquipoPantalla = true;
   }
 
-  mostrarPantallaPartidos(event:boolean){
-    console.log(event)
+  mostrarPantallaPartidos(){
+    
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminEquipoPantalla = false;
     this.adminSorteoPantalla= false
     this.adminRetirosPantalla = false
     this.adminUsuariosPantalla = false
-    this.adminPartidoPantalla = event
+    this.adminPartidoPantalla = true
 
   }
   
-  mostrarPantallaSorteo(event:boolean){
+  mostrarPantallaSorteo(){
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminEquipoPantalla = false;
     this.adminPartidoPantalla = false
     this.adminRetirosPantalla = false
     this.adminUsuariosPantalla = false
-    this.adminSorteoPantalla= event
+    this.adminSorteoPantalla= true
 
   }
 
-  mostrarPantallaRetiros(event:boolean){
+  mostrarPantallaRetiros(){
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminEquipoPantalla = false;
     this.adminPartidoPantalla = false
     this.adminSorteoPantalla= false
     this.adminUsuariosPantalla = false
-    this.adminRetirosPantalla = event
+    this.adminRetirosPantalla = true
   }
 
-  mostrarPantallaUsuarios(event:boolean){
+  mostrarPantallaUsuarios(){
     this.pantallaPrincipal = false;
     this.adminLigaPantalla = false;
     this.adminEquipoPantalla = false;
