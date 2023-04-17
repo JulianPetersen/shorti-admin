@@ -16,45 +16,59 @@
     <app-admin-retiros class="conteiner" *ngIf="adminRetirosPantalla"></app-admin-retiros>
     <app-admin-users class="conteiner" *ngIf="adminUsuariosPantalla"></app-admin-users>
 </div> -->
-
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer opened class="example-sidenav" mode="side">
-    <div class="logoytitle">
-      <img class="logo" src="assets/shorti-logo.png" alt="">
-      <h5 class="title">SHORTI</h5>
-    </div>
-    <div class="buttons">
-      <div class="button" (click)="mostrarPantallaLiga()">Administrar Ligas</div>
-    </div>
-    <div class="buttons">
-      <div class="button" (click)="mostrarPantallaEquipo()">Administrar Equipos</div>
-    </div>
-    <div class="buttons">
-      <div class="button" (click)="mostrarPantallaPartidos()">Administrar Partidos</div>
-    </div>
-    <div class="buttons">
-      <div class="button" (click)="mostrarPantallaSorteo()">Administrar sorteos</div>
-    </div>
-    <div class="buttons">
-      <div class="button" (click)="mostrarPantallaRetiros()">Administrar retiros</div>
-    </div>
-    <div class="buttons">
-      <div class="button" (click)="mostrarPantallaUsuarios()">Administrar Usuarios</div>
-    </div>
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <div class="example-button-container">
-      <button mat-mini-fab color="primary" (click)="drawer.toggle()" aria-label="Example icon button with a menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <app-admin-liga *ngIf="adminLigaPantalla"></app-admin-liga>
-      <app-admin-equipo *ngIf="adminEquipoPantalla"></app-admin-equipo>
-      <app-admin-partidos *ngIf="adminPartidoPantalla"></app-admin-partidos>
-      <app-sorteo-admin *ngIf="adminSorteoPantalla"></app-sorteo-admin>
-      <app-admin-retiros *ngIf="adminRetirosPantalla"></app-admin-retiros>
-      <app-admin-users *ngIf="adminUsuariosPantalla"></app-admin-users>
-    </div>
+<div class="conteiner">
+  <div class="menubutton">
+    <button class="button" color="primary" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
-
-</mat-drawer-container>
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer opened class="example-sidenav" mode="side">
+      <div class="logoytitle">
+        <img class="logo" src="assets/shorti-logo.png" alt="">
+        <h5 class="title">SHORTI</h5>
+      </div>
+      <div class="buttons">
+        <div class="button" (click)="showFiller = !showFiller">Administrar Ligas</div>
+        <mat-icon class="icon" (click)="showFiller = !showFiller">
+          expand_more
+        </mat-icon>
+      </div>
+      <div class="buttons" *ngIf="showFiller">
+        <div class="button subButton" (click)="mostrarPantallaLiga()">Agregar Ligas</div>
+      </div>
+      <div class="buttons" *ngIf="showFiller">
+        <div class="button subButton" (click)="mostrarPantallaEquipo()">Agregar Equipos</div>
+      </div>
+      <div class="buttons" *ngIf="showFiller">
+        <div class="button subButton" (click)="mostrarPantallaPartidos()">Administrar Partidos</div>
+      </div>
+      <div class="buttons">
+        <div class="button" (click)="mostrarPantallaSorteo()">Administrar sorteos</div>
+      </div>
+      <div class="buttons" >
+        <div class="button" (click)="mostrarPantallaRetiros()">Administrar retiros</div>
+      </div>
+      <div class="buttons" >
+        <div class="button" (click)="mostrarPantallaUsuarios()">Administrar Usuarios</div>
+      </div>
+  
+      <div class="buttons">
+        <div class="button" (click)="goteriminos()">terminos</div>
+      </div>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <div class="example-button-container">
+       
+        <app-admin-liga *ngIf="adminLigaPantalla"></app-admin-liga>
+        <app-admin-equipo *ngIf="adminEquipoPantalla"></app-admin-equipo>
+        <app-admin-partidos *ngIf="adminPartidoPantalla"></app-admin-partidos>
+        <app-sorteo-admin *ngIf="adminSorteoPantalla"></app-sorteo-admin>
+        <app-admin-retiros *ngIf="adminRetirosPantalla"></app-admin-retiros>
+        <app-admin-users *ngIf="adminUsuariosPantalla"></app-admin-users>
+      </div>
+    </div>
+  
+  </mat-drawer-container>
+</div>

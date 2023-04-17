@@ -25,6 +25,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PrincipalComponent } from './pages/principal/principal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,8 @@ import {MatIconModule} from '@angular/material/icon';
     AdminRetirosComponent,
     AdminRetirosComponent,
     AdminUsersComponent,
-    PoliticasComponent
+    PoliticasComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,9 @@ import {MatIconModule} from '@angular/material/icon';
     provideStorage(() => getStorage())
 
   ],
-  providers: [],
+  providers: [
+    {provide:LocationStrategy, useClass:HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

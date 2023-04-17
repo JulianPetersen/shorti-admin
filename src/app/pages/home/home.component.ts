@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent {
   adminUsuariosPantalla: boolean = false
   message:string = '';
 
-  constructor(){
+  constructor(public router:Router){
 
   }
 
@@ -93,5 +94,9 @@ export class HomeComponent {
     this.adminSorteoPantalla= false
     this.adminRetirosPantalla = false
     this.adminUsuariosPantalla = true
+  }
+
+  goteriminos(){
+    this.router.navigateByUrl('terminos')
   }
 }
